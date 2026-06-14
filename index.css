@@ -1,34 +1,179 @@
-body {background-color:#ffffff;background-image:url(https://i.postimg.cc/QCkMkLpz/wescampeople.png);background-size:cover;}
-h1{text-align:center;font-family:Arial, sans-serif;color: white;
-    font-size: 20px;
-    text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;}
-h3{text-align:center;font-family:Arial, sans-serif;color: white;
-    font-size: 20px;
-    text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;}
-div {text-align:center;line-height: 1.6;font-family:Arial, serif;font-size:16px;font-style:normal;font-weight:normal;color: white;
-    font-size: 20px;
-    text-shadow:
-        0.05em 0 black,
-        0 0.05em black,
-        -0.05em 0 black,
-        0 -0.05em black,
-        -0.05em -0.05em black,
-        -0.05em 0.05em black,
-        0.05em -0.05em black,
-        0.05em 0.05em black;}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: #0a0a0f;
+  background-image: url(https://i.postimg.cc/QCkMkLpz/wescampeople.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 620px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.warning-card {
+  background: rgba(8, 8, 12, 0.55);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid #e63030;
+  border-radius: 4px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.warning-badge {
+  display: inline-block;
+  background: #e63030;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  animation: fadeUp 0.5s 0.1s ease both;
+  opacity: 0;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #f5f0e8;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+  animation: fadeUp 0.5s 0.18s ease both;
+  opacity: 0;
+}
+
+.subhead {
+  color: #ffaa00;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: fadeUp 0.5s 0.26s ease both;
+  opacity: 0;
+}
+
+.body-text {
+  animation: fadeUp 0.5s 0.34s ease both;
+  opacity: 0;
+}
+
+.body-text > p {
+  color: #b8b2a8;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.body-text > p strong {
+  color: #f0ece4;
+}
+
+.warning-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.warning-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: #b8b2a8;
+  font-size: 0.975rem;
+  line-height: 1.65;
+}
+
+.warning-list li::before {
+  content: '▸';
+  color: #e63030;
+  font-size: 0.75rem;
+  position: absolute;
+  left: 0;
+  top: 0.38rem;
+}
+
+.warning-list li strong {
+  color: #ff7070;
+}
+
+.reviews-cta {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  text-align: center;
+}
+
+.reviews-btn {
+  display: inline-block;
+  background: transparent;
+  color: #ffaa00;
+  border: 1px solid #ffaa00;
+  border-radius: 3px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reviews-btn:hover {
+  background: #ffaa00;
+  color: #0a0a0f;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .warning-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
